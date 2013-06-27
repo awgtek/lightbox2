@@ -1,5 +1,24 @@
-## Lightbox2
-by Lokesh Dhakar | [lokeshdhakar.com](http://www.lokeshdhakar.com) | [twitter.com/lokeshdhakar](http://twitter.com/lokeshdhakar)
+## Lightbox2 FTW
+
+#FTW = Fit To Window
+
+Lightbox2 has this major flaw, where it will happily load an image that's larger than the viewable area of the browser. 
+The user is forced to scroll around to see the whole image, and to close the dialog. For such a great plugin, that's a pretty serious oversight.
+
+Well, "no more," I say.
+
+Lightbox2 FTW Edition is the latest version of Lightbox2 PLUS it automatically resizes your images to fit them within the bounds of the browser window.
+
+***
+
+I prefer Lightbox2 to just about every other clone. 
+
+They've all got their bells and whistles, but I so rarely need any of that extra stuff. 
+All those features and options come at the cost of loading time, and, of course, more code means a higher chance of bugs.
+
+***
+
+Original Lightbox2 - by Lokesh Dhakar | [lokeshdhakar.com](http://www.lokeshdhakar.com) | [twitter.com/lokeshdhakar](http://twitter.com/lokeshdhakar)
 
 ### Information and support
 For examples, downloads, and information on using Lightbox, visit the Lightbox2 homepage:
