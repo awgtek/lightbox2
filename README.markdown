@@ -22,6 +22,9 @@ TODO:
 
 * resize lightbox on window resize
 * check if image is larger than the window * 0.8, as opposed to the full window size
+* offer properly minified version
+* indent a little better
+* maybe add variable percentage width (currently 80% is the hardcoded value)
 
 ***
 
