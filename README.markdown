@@ -18,6 +18,12 @@ All those features and options come at the cost of loading time, and, of course,
 
 ***
 
+TODO:
+*resize lightbox on window resize
+*check if image is larger than the window * 0.8, as opposed to the full window size
+
+***
+
 Original Lightbox2 - by Lokesh Dhakar | [lokeshdhakar.com](http://www.lokeshdhakar.com) | [twitter.com/lokeshdhakar](http://twitter.com/lokeshdhakar)
 
 ### Information and support
