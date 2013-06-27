@@ -23,12 +23,15 @@
 }
 /* line 24, ../sass/lightbox.sass */
 #lightbox img {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 /* line 27, ../sass/lightbox.sass */
 #lightbox a img {
   border: none;
+}
+#lightbox .lb-loader a img {
+  width:auto;
 }
 
 /* line 30, ../sass/lightbox.sass */
