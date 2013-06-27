@@ -167,10 +167,33 @@ lightbox = new Lightbox options
       $lightbox.find('.lb-outerContainer').addClass('animating');
       preloader = new Image();
       preloader.onload = function() {
-        $image.attr('src', _this.album[imageNumber].link);
-        $image.width = preloader.width;
-        $image.height = preloader.height;
-        return _this.sizeContainer(preloader.width, preloader.height);
+        var imgW = preloader.width;
+  			var	imgH = preloader.height;
+				if(preloader.width > preloader.height && preloader.width > $(window).width()){
+  				//wide aspect ratio
+					//&&
+					//Wider than window
+					imgW = parseInt($(window).width() * 0.8);
+					imgH = parseInt(imgW / (preloader.width / preloader.height));
+				}
+				else if(preloader.height > preloader.width && preloader.height > $(window).height()){
+					//tall aspect ratio
+					//&&
+					//Taller than window
+					imgH = $(window).height() * 0.8;
+					imgW = parseInt(imgH * (preloader.width / preloader.height));
+				}
+				else{ //perfect square
+					if(preloader.width > $(window).width()){ //Larger than window
+						imgW = parseInt($(window).width() * 0.8);
+						imgH = imgW;
+					}
+				}
+				
+				$image.attr('src', _this.album[imageNumber].link);
+				$image.width = imgW;
+				$image.height = imgH;
+				return _this.sizeContainer(imgW, imgH);
       };
       preloader.src = this.album[imageNumber].link;
       this.currentImageIndex = imageNumber;
