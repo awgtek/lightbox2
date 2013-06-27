@@ -25,6 +25,7 @@ TODO:
 * offer properly minified version
 * indent a little better
 * maybe add variable percentage width (currently 80% is the hardcoded value)
+* Support CoffeeScript
 
 ***
 
