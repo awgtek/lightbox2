@@ -19,8 +19,9 @@ All those features and options come at the cost of loading time, and, of course,
 ***
 
 TODO:
-*resize lightbox on window resize
-*check if image is larger than the window * 0.8, as opposed to the full window size
+
+* resize lightbox on window resize
+* check if image is larger than the window * 0.8, as opposed to the full window size
 
 ***
 
