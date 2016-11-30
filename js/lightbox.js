@@ -84,7 +84,7 @@ lightbox = new Lightbox options
     Lightbox.prototype.build = function() {
       var $lightbox,
         _this = this;
-      $("<div id='lightboxOverlay'></div><div id='lightbox'><div class='lb-outerContainer'><div class='lb-container'><img class='lb-image' src='' ><div class='lb-nav'><a class='lb-prev' href='' ></a><a class='lb-next' href='' ></a></div><div class='lb-loader'><a class='lb-cancel'><img src='" + this.options.fileLoadingImage + "'></a></div></div></div><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'><img src='" + this.options.fileCloseImage + "'></a></div></div></div></div>").appendTo($('body'));
+      $("<div id='lightboxOverlay'></div><div id='lightbox'><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'><img src='" + this.options.fileCloseImage + "'></a></div></div></div><div class='lb-outerContainer'><div class='lb-container'><img class='lb-image' src='' ><div class='lb-nav'><a class='lb-prev' href='' ></a><a class='lb-next' href='' ></a></div><div class='lb-loader'><a class='lb-cancel'><img src='" + this.options.fileLoadingImage + "'></a></div></div></div><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'><img src='" + this.options.fileCloseImage + "'></a></div></div></div></div>").appendTo($('body'));
       $('#lightboxOverlay').hide().on('click', function() {
         _this.end();
         return false;
@@ -113,6 +113,11 @@ lightbox = new Lightbox options
       $lightbox.find('.lb-loader, .lb-close').on('click', function() {
         _this.end();
         return false;
+      });
+      $lightbox.find('.lb-caption').on('click', function(e) {
+		window.open(($(e.target).attr('href')),'_blank');
+        _this.end();
+        return true;
       });
     };
 
@@ -144,7 +149,7 @@ lightbox = new Lightbox options
         }
       }
       $window = $(window);
-      top = $window.scrollTop() + $window.height() / 10;
+      top = $window.scrollTop();// + $window.height() / 10;
       left = $window.scrollLeft();
       $lightbox = $('#lightbox');
       $lightbox.css({
@@ -267,7 +272,7 @@ lightbox = new Lightbox options
         _this = this;
       $lightbox = $('#lightbox');
       if (typeof this.album[this.currentImageIndex].title !== 'undefined' && this.album[this.currentImageIndex].title !== "") {
-        $lightbox.find('.lb-caption').html(this.album[this.currentImageIndex].title).fadeIn('fast');
+        $lightbox.find('.lb-caption').html('<a href="' + this.album[this.currentImageIndex].link + '" target="_blank">' + this.album[this.currentImageIndex].title + '</a>').fadeIn('fast');
       }
       if (this.album.length > 1) {
         $lightbox.find('.lb-number').html(this.options.labelImage + ' ' + (this.currentImageIndex + 1) + ' ' + this.options.labelOf + '  ' + this.album.length).fadeIn('fast');
