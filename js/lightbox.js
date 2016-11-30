@@ -48,8 +48,8 @@ lightbox = new Lightbox options
 
   LightboxOptions = (function() {
     function LightboxOptions() {
-      this.fileLoadingImage = 'img/loading.gif';
-      this.fileCloseImage = 'img/close.png';
+      this.fileLoadingImage = '/include/lightboxftw/img/loading.gif';
+      this.fileCloseImage = '/include/lightboxftw/img/close.png';
       this.resizeDuration = 700;
       this.fadeDuration = 500;
       this.labelImage = "Image";
@@ -169,7 +169,7 @@ lightbox = new Lightbox options
       preloader.onload = function() {
         var imgW = preloader.width;
   	var imgH = preloader.height;
-	if(preloader.width > preloader.height && preloader.width > $(window).width()){
+	if(/*preloader.width > preloader.height && */ preloader.width > $(window).width()){
 	  	//wide aspect ratio
 		//&&
 		//Wider than window
